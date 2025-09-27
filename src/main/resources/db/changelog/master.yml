@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/sc000001-init.sql
+  - include:
+      file: db/changelog/sc000002-alter.sql
+  - include:
+      file: db/changelog/sc000003-alter.sql
+  - include:
+      file: db/changelog/sc000004-alter.sql
+  - include:
+      file: db/changelog/sc000005-alter.sql
+  - include:
+      file: db/changelog/sc000006-alter.sql

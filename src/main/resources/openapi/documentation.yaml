@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+    title: ktor-crud - OpenAPI 3.0
+    description: |-
+        This is a sample Server API documentation based on the OpenAPI 3.0 specification. You can find out more about
+        Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
+
+        Some useful links:
+        - [The aspplication repository](https://github.com/MikhailEpatko/ktor-crud)
+        - [The source API definition for the application](https://github.com/MikhailEpatko/ktor-crud/openapi/documentation.yaml)
+    license:
+        name: MIT License
+        url: https://github.com/MikhailEpatko/ktor-crud/LICENSE
+    version: 0.0.5
+servers:
+    - url: "http://0.0.0.0:8080"
+tags:
+    - name: employees
+      description: CRUD Employee
+paths:
+    /api/employees:
+        put:
+            tags:
+                - employees
+            summary: Update an existing employee.
+            description: Update an employee by Id.
+            operationId: updateEmployee
+            requestBody:
+                description: Update an existent employee
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/UpdateEmployeeRequest'
+                required: true
+            responses:
+                '200':
+                    description: Successful operation
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Access denied
+                default:
+                    description: Unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/ErrorResponse"
+            security:
+              - app_auth: []
+components:
+    schemas:
+        UpdateEmployeeRequest:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: int64
+                    example: 10
+                name:
+                    type: string
+        ErrorResponse:
+            type: object
+            properties:
+                key:
+                    type: string
+                error:
+                    type: string
+    securitySchemes:
+        app_auth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
