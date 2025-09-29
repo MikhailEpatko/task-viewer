@@ -4,7 +4,6 @@ ktor:
       - ru.emi.ApplicationKt.module
   deployment:
     port: 8080
-#    rootPath: /api
     connectionGroupSize: 2
     workerGroupSize: 20
     callGroupSize: 10
@@ -17,16 +16,7 @@ postgres:
   password: ${POSTGRES_PASSWORD}
   driverClassName: org.postgresql.Driver
 
-keycloak:
-  uri: ${KEYCLOAK_URL}
-  realm: ${KEYCLOAK_REALM}
-  user-name-attribute: preferred_username
-  client-id: ${KEYCLOAK_CLIENT_ID}
-  client-secret: ${KEYCLOAK_CLIENT_SECRET}
-  authorization-grant-type: authorization_code
-  scope: openid
-
 app:
-  name: scheduler
+  name: task-viewer
   version: 0.0.1
   group: ru.emi

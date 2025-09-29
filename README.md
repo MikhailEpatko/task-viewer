@@ -2,7 +2,6 @@
 Template project that demonstrates kotlin stack
 
 ### Features
-
 Here's a list of features included in this project:
 - **Routing** - allows to define structured routes and associated handlers
 - **StatusPages** - a plugin that handles exceptions and status codes
@@ -14,7 +13,7 @@ Here's a list of features included in this project:
 - **PostgreSQL** - database
 - **HikariCP** - provides a pool of connections to the database
 - **Liquibase** - database change management
-- **Authentication** - JWT authentication
+- **Freemarker** - HTML template engine
 
 
 ### Automatic update of dependency versions
