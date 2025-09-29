@@ -11,12 +11,12 @@ ktor:
     shutdownTimeout: 3000
 
 postgres:
-  url: ${POSTGRES_URL}
+  url: ${POSTGRES_URL:}
   user: ${POSTGRES_USER}
   password: ${POSTGRES_PASSWORD}
   driverClassName: org.postgresql.Driver
 
 app:
   name: task-viewer
-  version: 0.0.2
+  version: 0.0.3
   group: ru.emi
